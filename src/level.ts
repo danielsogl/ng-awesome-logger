@@ -1,7 +1,14 @@
+/**
+ * Logging levels
+ * @author Daniel Sogl
+ */
 export enum Level {
-  DATA,
+  ALL,
+  TRACE,
+  DEBUG,
   INFO,
   WARN,
   ERROR,
-  __NOTHING
+  FATAL,
+  OFF
 }

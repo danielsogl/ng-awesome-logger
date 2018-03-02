@@ -22,20 +22,20 @@ export class Logger<T> {
   private _data(name: string, ...data: any[]) {
     if (
       this.allowed.length >= 1 &&
-      contain(this.allowed, Level.__NOTHING) &&
-      !contain(this.allowed, Level.DATA)
+      contain(this.allowed, Level.OFF) &&
+      !contain(this.allowed, Level.INFO)
     )
       return this;
     if (Logger.isProductionMode) return this;
     if (this.display !== undefined)
-      this.display(name, data, Level.DATA, this.name);
-    else if (this.allowed.length === 0 || contain(this.allowed, Level.DATA)) {
+      this.display(name, data, Level.INFO, this.name);
+    else if (this.allowed.length === 0 || contain(this.allowed, Level.INFO)) {
       Display.msg.apply(undefined, [
         name,
         ...data,
         this.name,
         this.color,
-        Level.DATA,
+        Level.INFO,
         this.fixedWidth
       ]);
     }
@@ -45,7 +45,7 @@ export class Logger<T> {
   private _error(name: string, ...data: any[]) {
     if (
       this.allowed.length >= 1 &&
-      contain(this.allowed, Level.__NOTHING) &&
+      contain(this.allowed, Level.OFF) &&
       !contain(this.allowed, Level.ERROR)
     )
       return this;
@@ -68,7 +68,7 @@ export class Logger<T> {
   private _info(name: string, ...data: any[]) {
     if (
       this.allowed.length >= 1 &&
-      contain(this.allowed, Level.__NOTHING) &&
+      contain(this.allowed, Level.OFF) &&
       !contain(this.allowed, Level.INFO)
     )
       return this;
@@ -91,7 +91,7 @@ export class Logger<T> {
   private _warn(name: string, ...data: any[]) {
     if (
       this.allowed.length >= 1 &&
-      contain(this.allowed, Level.__NOTHING) &&
+      contain(this.allowed, Level.OFF) &&
       !contain(this.allowed, Level.WARN)
     )
       return this;
