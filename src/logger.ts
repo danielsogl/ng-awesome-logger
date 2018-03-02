@@ -1,7 +1,6 @@
-import { Level } from './level';
 import { Display } from './display';
-
 import { contain } from './include';
+import { Level } from './level';
 
 export class Logger<T> {
   constructor(

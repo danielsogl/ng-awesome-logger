@@ -1,5 +1,3 @@
-import { Level } from './level';
-
 export function contain(arr: any[], item: any): boolean {
   return (
     arr.filter(

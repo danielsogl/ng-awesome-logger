@@ -1,15 +1,9 @@
-import { Logger } from './logger';
-import { Level } from './level';
 import { Display } from './display';
 import { contain } from './include';
-import { isNode } from './helper';
-declare var require: any;
+import { Level } from './level';
+import { Logger } from './logger';
 
-if (isNode) {
-  //#region backend
-  var randomcolor = require('randomcolor');
-  //#endregion
-}
+declare var require: any;
 
 export class Log {
   private static instances: any = {};
@@ -34,12 +28,6 @@ export class Log {
   }
 
   private static getRandomColor(): string {
-    if (isNode) {
-      //#region backend
-      return randomcolor({ luminosity: 'light', count: 10 });
-      //#endregion
-    }
-
     let letters = '012345'.split('');
     let color = '#';
     color += letters[Math.round(Math.random() * 5)];
@@ -58,13 +46,13 @@ export class Log {
     moduleName: string
   ) {
     if (!contain(Log.levels, incomming)) return;
-    if (incomming === Level.DATA) {
+    if (incomming === Level.INFO) {
       Display.msg(
         name,
         data,
         name,
         Log.instances[moduleName].color,
-        Level.DATA,
+        Level.INFO,
         Log.instances[moduleName].fixedWidth
       );
     }
