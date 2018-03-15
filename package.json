@@ -1,6 +1,6 @@
 {
   "name": "ng-awesome-logger",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An simple to use TypeScript base logger",
   "main": "./dist/lib/index.js",
   "types": "./dist/types/index.d.ts",
