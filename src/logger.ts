@@ -13,7 +13,7 @@ export class Logger<T> {
     private display?: (
       name: string,
       data: any,
-      leve: Level,
+      level: Level,
       moduleName: string
     ) => void
   ) {}

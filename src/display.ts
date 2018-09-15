@@ -1,8 +1,5 @@
 import { Level } from './level';
 
-declare var require: any;
-declare var process: any;
-
 export class Display {
   static msg(
     message: string | any,

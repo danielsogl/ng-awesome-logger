@@ -3,8 +3,6 @@ import { contain } from './include';
 import { Level } from './level';
 import { Logger } from './logger';
 
-declare var require: any;
-
 export class Log {
   private static instances: any = {};
 
@@ -93,7 +91,7 @@ export class Log {
   private static levels: Level[] = [];
   static onlyLevel(...level: Level[]) {
     if (Log._logOnly) {
-      console.error('You should use funcion onlyLevel only once');
+      console.error('You should use function onlyLevel only once');
       return;
     }
     if (Log._logOnly) Log._logOnly = true;
@@ -105,7 +103,7 @@ export class Log {
   private static modules: string[] = [];
   static onlyModules(...modules: string[]) {
     if (Log._logModules) {
-      console.error('You should use funcion onlyModules only once');
+      console.error('You should use function onlyModules only once');
       return;
     }
     if (modules.length === 0) return;
