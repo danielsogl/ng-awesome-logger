@@ -26,6 +26,6 @@
   "homepage": "https://github.com/danielsogl/ng-awesome-logger#readme",
   "dependencies": {},
   "devDependencies": {
-    "typescript": "^2.7.2"
+    "typescript": "^2.9.2"
   }
 }
